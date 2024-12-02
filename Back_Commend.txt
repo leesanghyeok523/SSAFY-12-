@@ -1,0 +1,13 @@
+cd Back/
+python -m venv venv
+source venv/Scripts/activate
+pip install -r requirements.txt
+python -m pip install --upgrade pip
+python manage.py makemigrations
+python manage.py migrate
+python manage.py fetch_deposit_products
+python manage.py fetch_savings_products
+python manage.py fetch_exchange_rates
+python manage.py fetch_exchange_rates
+python manage.py loaddata fixtures/dummy_data_5.json
+python manage.py runserver
